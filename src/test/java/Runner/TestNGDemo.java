@@ -34,6 +34,7 @@ public class TestNGDemo {
 		WebElement element = driver.findElement(By.className("_3ZqtNW"));
 
 		js.executeScript("arguments[0].setAttribute('style', arguments[1]);", element, "border: 4px solid red");
+		System.out.println("===================="+driver.getCurrentUrl()+"======================");
 		System.out.println("==============Script end===============");
 	}
 
