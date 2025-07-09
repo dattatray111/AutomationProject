@@ -24,14 +24,16 @@ public class SaucedemoBasic extends BaseStepDef
 	//	ChromeOptions options = new ChromeOptions();
 	//	options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1080");
 		// driver = new ChromeDriver(options);
+		System.out.println("IN method one");
 		driver.manage().window().maximize();
 		driver.get("https://www.youtube.com/");
+		System.out.println("IN method one");
 	}
 
 	
 	  @When("^Login with valid ((.*)) and ((.*))$") 
 	  public void login_with_valid_name_and(String arg1, String arg2) throws Exception {
-		  
+		  System.out.println("IN method Two");
 	  driver.findElement(By.xpath("//input[@name='search_query']")).sendKeys("jekins");
 	  driver.findElement(By.xpath("(//button[@title='Search'])[1]")).click();
 	  
@@ -39,7 +41,9 @@ public class SaucedemoBasic extends BaseStepDef
 	 
 
 	@Then("^User must logged in successfuly$")
+	
 	public void user_must_logged_in_successfuly() throws Exception {
+		System.out.println("IN method Three");
 		assertEquals("https://www.youtube.com/results?search_query=jenkins", driver.getCurrentUrl(), "Verify current URL");
 	}
 
