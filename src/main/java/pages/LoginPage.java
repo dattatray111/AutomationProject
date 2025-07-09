@@ -40,28 +40,13 @@ public class LoginPage  {
 	public void login(String userName, String password) throws Exception {
 		System.out.println("=================Login=======================");
 
-		try
-		{
-			sf.openUrl("https://www.saucedemo.com/");
-		}
-		catch (Exception e) {
-			System.out.println(e);
-		}
-
-		sf.drSendKeys(userNameTextField, userName);
-
-		sf.drSendKeys(pwdTextField, password);
-		sf.drClick(loginButton, "Login Button");
-
+		
 	}
 	
 	public void logOut() throws Exception {
 		System.out.println("=================Login=======================");
 
-		sf.drClick(openMenuButton, "open Menu Button");
-		Thread.sleep(1000);
-		sf.drClick(logoutLink, "Logout Link");
-		
+	
 	}
 
 }

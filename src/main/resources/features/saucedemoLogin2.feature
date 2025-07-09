@@ -1,6 +1,6 @@
 Feature: Verify important features for Saucedemo site another.
 
-  @tag1
+  @tag2
   Scenario Outline: Verify login check for saucedemo website	another
     Given Open saucedemo website
     When Login with valid <username> and <password>

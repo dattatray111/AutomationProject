@@ -1,9 +1,13 @@
 package stepDefinations;
 
 
+import static org.testng.Assert.assertEquals;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import com.aventstack.extentreports.util.Assert;
 import com.github.dockerjava.api.model.Driver;
 
 import io.cucumber.java.en.Then;
@@ -13,11 +17,11 @@ import pages.LoginPage;
 public class SaucedemoBasic extends BaseStepDef
 {
 	
-	
+	public WebDriver driver;
 	
 	@io.cucumber.java.en.Given("^Open saucedemo website$")
 	public void open_saucedemo_website() throws Exception {
-		WebDriver driver = new ChromeDriver();
+		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.youtube.com/");
 	}
@@ -26,14 +30,15 @@ public class SaucedemoBasic extends BaseStepDef
 	  @When("^Login with valid ((.*)) and ((.*))$") 
 	  public void login_with_valid_name_and(String arg1, String arg2) throws Exception {
 		  
-	  loginpage.login(arg1, arg2);
+	  driver.findElement(By.xpath("//input[@name='search_query']")).sendKeys("jekins");
+	  driver.findElement(By.xpath("(//button[@title='Search'])[1]")).click();
 	  
 	  }
 	 
 
 	@Then("^User must logged in successfuly$")
 	public void user_must_logged_in_successfuly() throws Exception {
-		loginpage.logOut();
+		assertEquals("https://www.youtube.com/results?search_query=jenkins", driver.getCurrentUrl(), "Verify current URL");
 	}
 
 }
