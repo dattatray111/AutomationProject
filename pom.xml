@@ -105,17 +105,27 @@
 </plugin>
 </plugins>
 </build>-->
-<build>
-  <plugins>
-    <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-compiler-plugin</artifactId>
-      <version>3.14.0</version> <!-- latest as of now -->
-      <configuration>
-        <source>11</source>   <!-- or 8, 17, depending on your Java version -->
-        <target>11</target>
-      </configuration>
-    </plugin>
-  </plugins>
-</build>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M1</version>
+				<configuration>
+					<parallel>methods</parallel>
+					<threadCount>4</threadCount>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.14.0</version> <!-- latest as of now -->
+				<configuration>
+					<source>11</source>   <!-- or 8, 17, depending on your Java
+					version -->
+					<target>11</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
