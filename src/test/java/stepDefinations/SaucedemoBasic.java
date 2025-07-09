@@ -6,6 +6,7 @@ import static org.testng.Assert.assertEquals;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import com.aventstack.extentreports.util.Assert;
 import com.github.dockerjava.api.model.Driver;
@@ -17,11 +18,12 @@ import pages.LoginPage;
 public class SaucedemoBasic extends BaseStepDef
 {
 	
-	public WebDriver driver;
 	
 	@io.cucumber.java.en.Given("^Open saucedemo website$")
 	public void open_saucedemo_website() throws Exception {
-		driver = new ChromeDriver();
+	//	ChromeOptions options = new ChromeOptions();
+	//	options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1080");
+		// driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.get("https://www.youtube.com/");
 	}

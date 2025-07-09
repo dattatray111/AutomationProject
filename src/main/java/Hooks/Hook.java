@@ -19,16 +19,17 @@ import io.cucumber.java.BeforeStep;
 import io.cucumber.java.Scenario;
 import pages.LoginPage;
 import selenium.framework.BaseClass;
+import stepDefinations.BaseStepDef;
 import utility.ExtentManager;
 
-public class Hook {
+public class Hook  extends BaseStepDef{
 
-	static WebDriver driver;
+	
 	static ExtentTest test;
 	@Before
 	public static void setUp(Scenario scenario) {
 
-		driver = BaseClass.getDriver();
+		driver = new ChromeDriver();
 
 		driver.manage().window().maximize();
 
