@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="DataProviderDemo">
+      <class name="Runner.TestNGDemo">
         <methods>
-          <include name="Flipkart" invocation-numbers="0 2 3"/>
+          <include name="T1"/>
         </methods>
-      </class> <!-- DataProviderDemo -->
+      </class> <!-- Runner.TestNGDemo -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
