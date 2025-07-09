@@ -1,4 +1,3 @@
-stepDefinations\BaseStepDef.class
 Runner\TestNGDemo.class
 Runner\TestRunner.class
 stepDefinations\SaucedemoBasic.class

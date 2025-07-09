@@ -11,8 +11,9 @@ public class TestNGDemo {
 
 	@Test
 	public static void T1() {
-		
+		System.setProperty("webdriver.chrome.driver", ".\\src\\main\\resources\\chromedriver.exe");
 			WebDriver driver = new ChromeDriver();
+			System.out.println("==============execution Started===============");
 			driver.get("https://www.flipkart.com/");
 			
 			 JavascriptExecutor js = (JavascriptExecutor) driver;
