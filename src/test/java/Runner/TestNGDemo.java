@@ -21,14 +21,14 @@ System.out.println("==============="+driverPath);
 			WebDriver driver = new ChromeDriver();
 			System.out.println("==============execution Started===============");
 			driver.get("https://www.flipkart.com/");
-			
+			System.out.println("==============Url opened===============");
 			 JavascriptExecutor js = (JavascriptExecutor) driver;
 			 
 			 WebElement element = driver.findElement(By.className("_3ZqtNW"));
 			
 			js.executeScript("arguments[0].setAttribute('style', arguments[1]);", 
                     element, "border: 4px solid red");
-
+			System.out.println("==============Script end===============");
 	}
 
 }
