@@ -7,28 +7,34 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
 public class TestNGDemo {
 
 	@Test
 	public static void T1() {
-		String driverPath = Paths.get("src", "test", "java", "Runner", "chromedriver.exe")
-                .toAbsolutePath().toString();
-System.setProperty("webdriver.chrome.driver", driverPath);
-System.out.println("==============="+driverPath);
+
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--headless=new"); // or "--headless"
+		options.addArguments("--disable-gpu");
+		options.addArguments("--window-size=1920,1080");
+		
+		String driverPath = Paths.get("src", "test", "java", "Runner", "chromedriver.exe").toAbsolutePath().toString();
 		System.setProperty("webdriver.chrome.driver", driverPath);
-			WebDriver driver = new ChromeDriver();
-			System.out.println("==============execution Started===============");
-			driver.get("https://www.flipkart.com/");
-			System.out.println("==============Url opened===============");
-			 JavascriptExecutor js = (JavascriptExecutor) driver;
-			 
-			 WebElement element = driver.findElement(By.className("_3ZqtNW"));
-			
-			js.executeScript("arguments[0].setAttribute('style', arguments[1]);", 
-                    element, "border: 4px solid red");
-			System.out.println("==============Script end===============");
+		System.out.println("===============" + driverPath);
+		
+		System.setProperty("webdriver.chrome.driver", driverPath);
+		WebDriver driver = new ChromeDriver();
+		System.out.println("==============execution Started===============");
+		driver.get("https://www.flipkart.com/");
+		System.out.println("==============Url opened===============");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
+		WebElement element = driver.findElement(By.className("_3ZqtNW"));
+
+		js.executeScript("arguments[0].setAttribute('style', arguments[1]);", element, "border: 4px solid red");
+		System.out.println("==============Script end===============");
 	}
 
 }
