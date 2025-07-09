@@ -29,6 +29,7 @@ public class Hook  extends BaseStepDef{
 	@Before
 	public static void setUp(Scenario scenario) {
 
+		System.setProperty("webdriver.chrome.driver", ".\\src\\main\\resources\\chromedriver.exe");
 		driver = new ChromeDriver();
 
 		driver.manage().window().maximize();
