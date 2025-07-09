@@ -1,5 +1,7 @@
 package Runner;
 
+import java.nio.file.Paths;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +13,11 @@ public class TestNGDemo {
 
 	@Test
 	public static void T1() {
-		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+		String driverPath = Paths.get("src", "test", "java", "Runner", "chromedriver.exe")
+                .toAbsolutePath().toString();
+System.setProperty("webdriver.chrome.driver", driverPath);
+System.out.println("==============="+driverPath);
+		System.setProperty("webdriver.chrome.driver", driverPath);
 			WebDriver driver = new ChromeDriver();
 			System.out.println("==============execution Started===============");
 			driver.get("https://www.flipkart.com/");
