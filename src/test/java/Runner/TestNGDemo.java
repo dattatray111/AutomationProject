@@ -23,8 +23,8 @@ public class TestNGDemo {
 		System.out.println("===============" + driverPath);
 		
 		System.setProperty("webdriver.chrome.driver", driverPath);
-		WebDriver driver = new EdgeDriver();
-		//WebDriver driver = new ChromeDriver();
+//WebDriver driver = new EdgeDriver();
+		WebDriver driver = new ChromeDriver();
 		System.out.println("==============execution Started===============");
 		driver.get("https://www.flipkart.com/");
 		System.out.println("==============Url opened===============");
