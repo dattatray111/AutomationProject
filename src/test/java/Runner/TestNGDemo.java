@@ -9,22 +9,43 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class TestNGDemo {
 
-	@Test
-	public static void T1() throws InterruptedException {
-
-		
-		
+	static WebDriver driver;
+	@BeforeTest
+	public void beforeTest()
+	{
 		String driverPath = Paths.get("src", "test", "java", "Runner", "chromedriver.exe").toAbsolutePath().toString();
 		System.setProperty("webdriver.chrome.driver", driverPath);
 		System.out.println("===============" + driverPath);
 		
 		System.setProperty("webdriver.chrome.driver", driverPath);
-//WebDriver driver = new EdgeDriver();
-		WebDriver driver = new ChromeDriver();
+		driver = new ChromeDriver();
+	}
+	@Test
+	public static void T1() throws InterruptedException {
+		
+		System.out.println("==============execution Started===============");
+		driver.get("https://www.flipkart.com/");
+		System.out.println("==============Url opened===============");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
+		WebElement element = driver.findElement(By.className("_3ZqtNW"));
+
+		js.executeScript("arguments[0].setAttribute('style', arguments[1]);", element, "border: 4px solid red");
+		Thread.sleep(1000);
+		
+		System.out.println("===================="+driver.getCurrentUrl()+"======================");
+		driver.close();
+		System.out.println("==============Script end===============");
+	}
+	
+	@Test
+	public static void T2() throws InterruptedException {
+		
 		System.out.println("==============execution Started===============");
 		driver.get("https://www.flipkart.com/");
 		System.out.println("==============Url opened===============");
