@@ -1,3 +1,5 @@
 /target/
 /failedTestCaseSC/
 /ExtentReport.html
+/test-output/
+/src/

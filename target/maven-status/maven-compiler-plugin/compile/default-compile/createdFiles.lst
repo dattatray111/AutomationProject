@@ -1,2 +1,3 @@
+stepDefinations\BaseStepDef.class
 Hooks\Hook.class
 pages\LoginPage.class
