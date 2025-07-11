@@ -16,7 +16,7 @@ public class TestNGDemo {
 	public static void T1() {
 
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--headless=new"); // or "--headless"
+		options.addArguments("--headless"); // or "--headless"
 		options.addArguments("--disable-gpu");
 		options.addArguments("--window-size=1920,1080");
 		
