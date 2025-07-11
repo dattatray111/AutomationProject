@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 public class TestNGDemo {
 
 	@Test
-	public static void T1() {
+	public static void T1() throws InterruptedException {
 
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--headless"); // or "--headless"
@@ -25,7 +25,7 @@ public class TestNGDemo {
 		System.out.println("===============" + driverPath);
 		
 		System.setProperty("webdriver.chrome.driver", driverPath);
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new ChromeDriver(options);
 		System.out.println("==============execution Started===============");
 		driver.get("https://www.flipkart.com/");
 		System.out.println("==============Url opened===============");
@@ -34,6 +34,8 @@ public class TestNGDemo {
 		WebElement element = driver.findElement(By.className("_3ZqtNW"));
 
 		js.executeScript("arguments[0].setAttribute('style', arguments[1]);", element, "border: 4px solid red");
+		Thread.sleep(1000);
+		driver.close();
 		System.out.println("===================="+driver.getCurrentUrl()+"======================");
 		System.out.println("==============Script end===============");
 	}
