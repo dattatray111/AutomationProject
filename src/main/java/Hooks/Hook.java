@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
@@ -32,7 +33,7 @@ public class Hook  extends BaseStepDef{
 	public static void setUp(Scenario scenario) {
 
 		//System.setProperty("webdriver.chrome.driver", ".\\src\\main\\resources\\chromedriver.exe");
-		driver = new ChromeDriver();
+		driver = new EdgeDriver();
 
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
