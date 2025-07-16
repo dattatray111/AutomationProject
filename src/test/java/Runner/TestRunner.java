@@ -10,6 +10,12 @@ import io.cucumber.junit.CucumberOptions;
 		,glue={"stepDefinations","Hooks"}
 		,monochrome = false
 	    ,tags = "@tag1"
+	    ,plugin = {
+	            "pretty",
+	            "html:target/cucumber-reports.html",
+	            "json:target/cucumber.json",
+	            "junit:target/cucumber.xml"
+	        }
 		
 		)
 public class TestRunner {

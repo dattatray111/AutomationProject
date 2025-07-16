@@ -5,7 +5,9 @@
     <classes>
       <class name="Runner.TestNGDemo">
         <methods>
-          <include name="T1"/>
+          <include name="T2"/>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
         </methods>
       </class> <!-- Runner.TestNGDemo -->
     </classes>

@@ -1,3 +1,5 @@
 stepDefinations\BaseStepDef.class
 Hooks\Hook.class
 pages\LoginPage.class
+stepDefinations\SauceLabDemo.class
+BaseStepDef.class
